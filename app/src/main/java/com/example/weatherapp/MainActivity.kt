@@ -100,12 +100,41 @@ fun WeatherLocation(){
 }
 @Composable
 fun WeatherInfo(){
-    Card(modifier = Modifier
-        .clip(RoundedCornerShape(10.dp))
-        .background(color = Color.Cyan)) {
-        Row() {
-            Column() {
-                Text(text = "Aw")
+    Box (modifier = Modifier
+        .fillMaxWidth()
+        .clip(RoundedCornerShape(20.dp))
+        .background(color = Color.Cyan)
+        .height(200.dp)) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier
+                .fillMaxSize(), verticalArrangement = Arrangement.SpaceAround
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.SpaceAround,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(text = "Humidity", fontSize = 20.sp)
+                    Text(text = "98%", fontWeight = FontWeight.Bold, fontSize = 25.sp)
+                }
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(text = "UV Index", fontSize = 20.sp)
+                    Text(text = "9/10", fontWeight = FontWeight.Bold, fontSize = 25.sp)
+                }
+            }
+
+            Row(
+                horizontalArrangement = Arrangement.SpaceAround,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(text = "Sunrise", fontSize = 20.sp)
+                    Text(text = "05.00 AM", fontWeight = FontWeight.Bold, fontSize = 25.sp)
+                }
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(text = "Sunset", fontSize = 20.sp)
+                    Text(text = "05.40 PM", fontWeight = FontWeight.Bold, fontSize = 25.sp)
+                }
             }
         }
     }
